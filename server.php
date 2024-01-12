@@ -13,4 +13,3 @@ $dischi = json_decode($database);
 // json con dischi
 header('Content-Type: application/json');
 echo json_encode($dischi);
-

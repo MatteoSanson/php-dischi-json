@@ -10,7 +10,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- /bootstrap -->
     <!-- mio css  -->
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="./src/css/style.css">
     <!-- /mio css  -->
     <title>PHP Dischi JSON</title>
 </head>
@@ -21,14 +21,22 @@
     </header>
     <main>
         <div id="app">
-            <ul>
-                <li v-for="disco in dischi">
-                    <p><strong>Nome dell'album:</strong> {{ disco.album }}</p>
-                    <p><strong>Autore:</strong> {{ disco.author }}</p>
-                    <p><strong>Anno di pubblicazione:</strong> {{ disco.released }}</p>
-                    <hr>
-                </li>
-            </ul>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3" v-for="disco in dischi" :key="disco.id">
+                        <div class="card mb-4">
+                            <div class="card-body  text-center">
+                                <div class="img-cnt mx-auto">
+                                    <img :src="disco.album_pic" :alt="disco.album">
+                                </div>
+                                <h5 class="card-title my-4">{{ disco.album }}</h5>
+                                <p class="card-text"> {{ disco.author }}</p>
+                                <p class="card-text"> {{ disco.released }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <!-- vuejs  -->
